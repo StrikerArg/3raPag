@@ -1,0 +1,64 @@
+<div class="wrap">
+  <h1>3 Volumes!</h1>
+</div>
+
+----------------------------------
+
+@import "compass/css3";
+
+@import "compass/css3/transform";
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+body {
+
+ background-color: #ED6565;
+}
+
+.wrap {
+  padding: 5em 0.5em;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-weight: normal;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 8em;
+  white-space: nowrap;
+  font-size: 12vw;
+  z-index: 1000;
+  font-family: 'Bangers', cursive;
+  text-shadow: 5px 5px 0 rgba(0, 0, 0, 0.7);
+  @include skew(0, -6.7deg, false);
+  @include transition-property(font-size);
+  @include transition-duration(0.5s);
+
+}
+
+@media screen and (max-width: 50em) {
+  h1 {
+    font-size: 20vw;
+   }
+}
+
+----------------------------------
+
+// So vw units work.
+// Thanks for this, Mr Coyier.
+
+    // Chrome 26 needs this
+    // Safari 6 needs this
+
+    // Firefox 19 doesn't need it
+    // IE 10 doesn't need it
+
+        $(function() {
+
+            causeRepaintsOn = $("h1, h2, h3, p");
+
+            $(window).resize(function() {
+                causeRepaintsOn.css("z-index", 1);
+            });
+
+        });
+    
